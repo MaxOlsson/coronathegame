@@ -100,7 +100,7 @@
     window.requestAnimationFrame(gameloop);
   };
   
-  const generateCoords = (canvas) => {
+  const generateCoords = canvas => {
     const coords = [];
 
     for (let i = 0; i < totalCoords; i++) {
