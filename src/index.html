@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161774688-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-161774688-1');
+    </script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:300&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' type='text/css' href='./index.css'>
+  </head>
+  <body>
+    <div class='app'>
+      <div class='banner'>
+        <div class='controls'>
+          <div class='pause-control pause-button' onclick='pauseGame();'></div>
+          <div class='sound-control banner__mute' onclick='mute()'></div>
+        </div>
+        <div class='scoreboard'></div>
+      </div>
+      <div class='overlay'>
+        <div class='start-banner__wrapper'>
+          <div class='start-text'>
+            Oh no!
+            <br />
+            <br />
+            The pesky Corona flu has taken over the city!
+            <br />
+            <br />
+            Click and explode the Covids to get rid of Corona!
+            <br />
+            <br />
+            Only you can save us!
+          </div> 
+          <div class='start-banner'>
+            <div class='start-banner__start-game' onclick='startGame();'>
+              <div class='img-wrapper'>
+                <img src="assets/bug/bug-infected.png" width="132" height="132"/>
+              </div>
+              <div class='start-banner__start-button'>start</div>
+            </div>
+          </div>
+        </div>
+        <div class='pause-banner'>
+          <div class='pause-banner__pause-resume'>
+            <div class='start-banner__start-game' onclick='pauseGame();'>
+              <div class='img-wrapper'>
+                <img src="assets/bug/bug-infected.png" width="132" height="132"/>
+              </div>
+              <div class='start-banner__start-button'>resume game</div>
+            </div>
+          </div>
+        </div>
+        <div class='game-banner'>
+          <div class='game-banner__game-over'>
+            Game Over
+          </div>
+          <div class='game-banner__covid-info'>
+            Hope you enjoyed playing this fun little game!
+            <br/>
+            However covid19 is a virus that should be taken seriously...
+            <br/>
+            <br/>
+            Please inform yourself on how to best protect yourself and everyone else!
+            <br />
+            <br />
+            https://www.who.int/emergencies/diseases/novel-coronavirus-2019
+          </div>
+          <a class='game-banner__created-by' href='https://github.com/MaxOlsson' target='_blank'>
+            <div class='github-icon' title='https://github.com/MaxOlsson'></div>
+            <div>
+              Created by Max Olsson
+            </div>
+          </a>
+          <div class='game-banner__acknowledgements'>
+            <div class='game-banner__acknowledgements-text'>
+              Thanks and acknowledgements to:
+            </div>
+            <ul class='game-banner__acknowledgements-list'>
+              <li>
+                <span>Photo by Adi Constantin on Unsplash</span>
+                <a target='_blank' href="https://adiconstantin.com/">adiconstantin.com</a>
+              </li>
+              <li>
+                <span>Photo by Hanson Lu on Unsplash</span>
+                <a target='_blank' href="https://instagram.com/haaansoooon">instagram.com/haaansoooon</a>
+              </li>
+              <li>
+                <span>Photo by Denny Ryanto on Unsplash</span>
+                <a target='_blank' href="https://dennyryanto.com/">dennyryanto.com</a>
+              </li>
+              <li>
+                <span>Photo by Yiran Ding on Unsplash</span>
+                <a target='_blank' href="https://instagram.com/yiran_ding">instagram.com/yiran_ding</a>
+              </li>
+              <li>
+                <span>Photo by Jay on Unsplash</span>
+                <a target='_blank' href="https://instagram.com/filmape">instagram.com/filmape</a>
+              </li>
+              <li>
+                <span>Photo by Ken Lawrence on Unsplash</span>
+                <a target='_blank' href="https://kenner.be">kenner.be</a>
+              </li>
+              <li>
+                <span>Holger.Ellgaard</span>
+                <a target='_blank' href="https://commons.wikimedia.org/wiki/User:Holger.Ellgaard">Holger.Ellgaard wikipedia</a>
+              </li>
+              <li>
+                <span>Background music - "8 Bit Menu" By David Renda</span>
+                <a target='_blank' href="https://www.fesliyanstudios.com/royalty-free-music/download/8-bit-menu/287">https://www.fesliyanstudios.com/royalty-free-music/download/8-bit-menu/287</a>
+              </li>
+              <li>
+                <span>Sound effects obtained from https://www.zapsplat.com</span>
+                <a target='_blank' href="https://www.zapsplat.com">https://www.zapsplat.com</a>
+              </li>
+              <li>
+                <span>icons by material-ui</span>
+                <a target='_blank' href="https://material-ui.com/">https://material-ui.com/</a>
+              </li>
+              <li>
+                <span>subscribe to pewdiepie</span>
+                <a target='_blank' href="https://www.youtube.com/user/PewDiePie">https://www.youtube.com/user/PewDiePie</a>
+              </li>
+              <li>
+                <span>subscribe to mrbeast</span>
+                <a target='_blank' href="https://www.youtube.com/user/MrBeast6000">https://www.youtube.com/user/MrBeast6000</a>
+              </li>
+            </ul>
+          </div>
+          <div class='start-banner'>
+            <div class='start-banner__restart-game' onclick='startGame();'>
+              <div class='img-wrapper'>
+                <img src="assets/bug/bug-infected.png" width="132" height="132"/>
+              </div>
+              <div class='start-banner__start-button'>Play again</div>
+            </div>
+          </div>
+        </div>
+        <div class='nextlevel-banner' onclick='startNextLevel()'>
+          <div class='nextlevel-banner__congrats'>Congratulations!</div>
+          <div class='nextlevel-banner__you-beat'>You beat the level!</div>
+          <div class='nextlevel-banner__input'>Click to start next level</div>
+        </div>
+      </div>
+      <canvas id='canvas'></canvas>
+    </div>
+  </body>
+  <script type='text/javascript' src='./index.js'></script>
+</html>

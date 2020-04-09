@@ -1,0 +1,284 @@
+html, body {
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#canvas {
+  width: 100%;
+}
+
+.app {
+  height: 100%;
+}
+
+.banner {
+  height: 100px;
+  font-size: 4vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  display: none;
+  padding: 10px;
+  color: yellow;
+  text-shadow: 0px 0 black, 0 3px red, 3px 0 red, 0 0px red;
+}
+
+.controls {
+  display: flex;
+}
+
+.banner__mute {
+  background-image: url('./assets/icons/baseline_volume_up_white_18dp.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+}
+
+.banner__mute:hover {
+  /* background-image: url('./assets/icons/baseline_volume_off_white_18dp.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px; */
+  cursor: pointer;
+}
+
+.banner__muted {
+  background-image: url('./assets/icons/baseline_volume_off_white_18dp.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+}
+
+.banner__muted:hover {
+  /* background-image: url('./assets/icons/baseline_volume_up_white_18dp.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px; */
+  cursor: pointer;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 44px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.overlay-started {
+  height: calc(100% - 120px);
+}
+
+.start-banner__wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.start-banner__start-game:hover, .start-banner__restart-game:hover {
+  border-bottom: solid 5px red;
+  cursor: pointer;
+}
+
+.start-banner__restart-game {
+  display: flex;
+  justify-content: center;
+}
+
+.start-banner__start-game {
+  display: flex;
+  margin-top: 20px;
+}
+
+.start-banner__start-button {
+  font-size: 80px;
+  background-color: rgba(0, 0, 0, 0);
+  color: red;
+  border: none;
+  border-bottom: solid 5px rgba(0, 0, 0, 0);
+  margin-left: 32px;
+}
+
+.resume-button {
+  background-image: url('./assets/icons/baseline_play_circle_filled_white_18dp.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+}
+
+.resume-button:hover {
+  /* background-image: url('./assets/icons/baseline_play_circle_outline_white_18dp.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px; */
+  cursor: pointer;
+}
+
+.pause-button {
+  background-image: url('./assets/icons/baseline_pause_circle_filled_white_18dp.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+}
+
+.pause-button:hover {
+  /* background-image: url('./assets/icons/baseline_pause_circle_outline_white_18dp.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 32px;
+  height: 32px; */
+  cursor: pointer;
+}
+
+.pause-banner {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+.pause-banner__pause-resume {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+.nextlevel-banner {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: yellow;
+  text-shadow: 0px 0 black, 0 3px red, 3px 0 red, 0 0px red;
+}
+
+.nextlevel-banner__congrats {
+  font-size: 44px;
+}
+
+.nextlevel-banner__you-beat {
+  font-size: 44px;
+}
+
+.nextlevel-banner__input {
+  font-size: 44px;
+  margin-top: 30px;
+  animation: blink .5s step-end infinite alternate;
+}
+
+.game-banner {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.game-banner__game-over {
+  font-size: 56px;
+  color: red;
+}
+
+.game-banner__covid-info {
+  /* color: rgba(255, 255, 255, 0.7); */
+  font-size: 12px;
+  margin-top: 35px;
+}
+
+.game-banner__acknowledgements {
+  /* color: rgba(255, 255, 255, 0.7); */
+  font-size: 12px;
+  margin-top: 35px;
+}
+
+.game-banner__created-by {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+  align-items: center;
+}
+
+.game-banner__acknowledgements-list {
+  list-style: none;
+}
+
+#canvas {
+  display: block;
+}
+
+.github-icon {
+  background-image: url('./assets/icons/github-light-32px.png');
+  width: 32px;
+  height: 32px;
+  margin: 0px 12px;
+  cursor: pointer;
+}
+.github-icon:hover {
+  cursor: pointer;
+  /* background-image: url('./assets/icons/github-dark-32px.png'); */
+}
+
+.fadein {
+  animation-duration: 3s;
+  animation-name: fadein;
+}
+
+.gameover {
+  animation-duration: 1s;
+  animation-name: fadein;
+}
+
+/* unvisited link */
+a:link, a:visited, a:hover, a:active {
+  color: white;
+}
+
+@keyframes blink {
+  50% { 
+    color: red;
+    text-shadow: 0px 0 black, 0 3px yellow, 3px 0 yellow, 0 0px yellow;
+  } 
+}
+
+@keyframes fadein {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0.0
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0.4;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+  }
+}
