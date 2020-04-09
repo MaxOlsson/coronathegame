@@ -44,7 +44,7 @@
 
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   const maxTries = isMobile ? 1 : 2;
-  const winLimit = 0.9;
+  const winLimit = isMobile ? 1.0 : 0.9;
   const startCoordRadius = 10;
   const explosionRadius = isMobile ? 180 : 120;
   const explosionVelocity = isMobile ? 2.4 : 1.8;
@@ -106,10 +106,13 @@
     for (let i = 0; i < totalCoords; i++) {
       let randomX = Math.floor(Math.random() * Math.floor(canvas.width - coordSize));
       let randomY = Math.floor(Math.random() * Math.floor(canvas.height - coordSize));
+
       randomX = randomX > coordSize + canvas.width ? randomX - coordSize : randomX < coordSize ? randomX + coordSize: randomX;
       randomY = randomY > coordSize + canvas.height ? randomY - coordSize : randomY < coordSize ? randomY + coordSize : randomY;
-      const velocityX = Math.random() + Math.random() + (isMobile ? 1.5 : 0);
-      const velocityY = Math.random() + Math.random() + (isMobile ? 1.5 : 0);
+
+      const velocityX = isMobile ? Math.random() + 1.5 : Math.random() + 0.5;
+      const velocityY = isMobile ? Math.random() + 1.5 : Math.random() + 0.5;
+
       coords.push({
         id: i,
         img: bugAlive,
@@ -242,9 +245,9 @@
         context.stroke();
         context.closePath();
         calculateExplosionHitAny(coords);
-        if (!muted) {
-          onbugexplodeAudio.play();
-        }
+        // if (!muted) {
+        //   onbugexplodeAudio.play();
+        // }
       } else {
         startExplosionRadius = 10;
         playerX = null;
